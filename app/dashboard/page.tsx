@@ -1,5 +1,6 @@
 "use client";
 
+import BarCharts from "@/components/ui/graphs/barcharts";
 import { logout } from "@/src/auth-actions";
 
 export default function Login() {
@@ -8,6 +9,7 @@ export default function Login() {
     <div>
       <h1>Home</h1>
       <button onClick={logout}>Logout</button>
+	  <BarCharts></BarCharts>
     </div>
   );
 }
