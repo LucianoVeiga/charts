@@ -1,15 +1,16 @@
-"use client";
+import { getSession } from "@/src/sessions";
+import { redirect } from "next/navigation";
+import Dashboard from "@/components/ui/dashboard";
 
-import BarCharts from "@/components/ui/graphs/barcharts";
-import { logout } from "@/src/auth-actions";
+export default async function Login() {
 
-export default function Login() {
-
+	const session = await getSession();
+	  if (!session) {
+		redirect("/login");
+	  }
   return (
     <div>
-      <h1>Home</h1>
-      <button onClick={logout}>Logout</button>
-	  <BarCharts></BarCharts>
+      <Dashboard />
     </div>
   );
 }
